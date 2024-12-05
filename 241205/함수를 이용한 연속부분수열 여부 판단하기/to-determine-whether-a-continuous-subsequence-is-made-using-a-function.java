@@ -42,7 +42,6 @@ public class Main {
             if(match){
                 return true;
             }
- 
         }
 
         return false;  
