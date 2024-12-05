@@ -20,41 +20,31 @@ public class Main {
             B[i] = sc.nextInt();
         }
 
-
-        if(isFunc(A,B)){
+        if(isSubsequance(A,B,n1,n2)){
             System.out.print("Yes");
         }else{
             System.out.print("No");
         }
     }
 
-    public static boolean isFunc(int[] A, int[] B){
 
-       
-        if(A.length < B.length){
-            return false;
-        }
-
-         // 슬라이딩 윈도우 방식으로 A에서 B와 같은 부분 배열이 있는지 확인
-        for (int i = 0; i <= A.length - B.length; i++) {
-            boolean isMatch = true;
-
-            // A의 현재 윈도우와 B 비교
-            for (int j = 0; j < B.length; j++) {
-                if (A[i + j] != B[j]) {
-                    isMatch = false;
-                    break;
+    public static boolean isSubsequance(int[] A, int[] B, int n1, int n2){
+        //A의 탐색 범위
+        for(int i=0; i<=n1-n2; i++) {
+            boolean match = true;
+            for(int j=0; j<n2; j++){
+                if(A[i+j] != B[j]){
+                match = false;
+                break;
                 }
             }
 
-            // 부분 배열이 일치하면 true 반환
-            if (isMatch) {
+            if(match){
                 return true;
             }
+ 
         }
 
-        // 끝까지 찾지 못했으면 false 반환
-        return false;
-
+        return false;  
     }
 }
