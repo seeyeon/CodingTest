@@ -12,7 +12,7 @@ public class Main {
 
         int maxDay = getMaxDay(M);
 
-        if(D <=maxDay){
+         if(M<=12 && D<=maxDay){
             System.out.print("Yes");
         }else{
             System.out.print("No");
@@ -22,7 +22,6 @@ public class Main {
     public static int getMaxDay(int month){
         if(month == 2) return 28;
         if(month == 4 || month == 6 || month == 9 || month == 11) return 30;
-        if(month >12) return 0;
         return 31;
     }
 
