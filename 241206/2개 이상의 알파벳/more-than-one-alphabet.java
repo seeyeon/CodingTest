@@ -12,7 +12,7 @@ public class Main {
     }
 
     public static void cal(String a){
-        int cnt=0;
+        int cnt=1;
 
         for(int i=0; i<a.length()-1; i++){
             if(a.charAt(i) !=a.charAt(i+1)){
