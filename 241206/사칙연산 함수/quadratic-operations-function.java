@@ -6,36 +6,37 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        String num1 = sc.next();
-        String oper = sc.next();
-        String num2 = sc.next();
+        int a = sc.nextInt();
+        char oper = sc.next().charAt(0);
+        int b = sc.nextInt();
 
-        int result = fun(num1, oper, num2);
-
-        if(result !=0){
-            System.out.print(num1+" "+oper+" "+num2+" = "+result);
+        if(oper =='+'){
+            System.out.print(a+" + " + b + " = " + plus(a,b));
+        }else if(oper == '-'){
+            System.out.print(a+" - " + b + " = " + minus(a,b));
+        }else if(oper == '*'){
+            System.out.print(a+" * " + b + " = " + multiply(a,b));
+        }else if(oper == '/'){
+            System.out.print(a+" / " + b + " = " + divide(a,b));
         }else{
             System.out.print("False");
         }
+        
     }
 
-    public static int fun(String num1, String oper, String num2){
-        
-        int a = Integer.parseInt(num1);
-        int b = Integer.parseInt(num2);
+    public static int plus(int a, int b){
+        return a+b;
+    }
 
-        
-        if(oper.equals("+")){
-            return a+b ; 
-        }else if(oper.equals("-")){
-            return a-b;
-        }else if(oper.equals("/")){
-            return (int)a/b;
-        }else if(oper.equals("*")){
-            return a*b;
-        }else{
-            return 0;
-        }
-    
+    public static int minus(int a, int b){
+        return a-b;
+    }
+
+    public static int multiply(int a, int b){
+        return a*b;
+    }
+
+    public static int divide(int a, int b){
+        return a/b;
     }
 }
