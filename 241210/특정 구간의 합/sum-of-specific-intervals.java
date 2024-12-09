@@ -22,11 +22,11 @@ public class Main {
             int a1 = sc.nextInt();
             int a2 = sc.nextInt();
 
-            rangeSum(arr,a1,a2);
+            rangeSum(a1,a2);
         }
     }
 
-    public static void rangeSum(int[] arr,int a, int b){
+    public static void rangeSum(int a, int b){
         int sum=0;
 
          for(int i=a-1; i<=b-1; i++){
