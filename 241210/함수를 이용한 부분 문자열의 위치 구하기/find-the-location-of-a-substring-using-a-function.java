@@ -14,18 +14,29 @@ public class Main {
 
     public static void isPresent(String A, String str){
 
-        for(int i=0; i<A.length(); i++){
+        boolean found = false;
 
+        for(int i=0; i<=A.length() - str.length(); i++){
+            boolean match =true;
+
+            for(int j=0; j<str.length(); j++){
+                if(A.charAt(i+j) != str.charAt(j)){
+                    match = false;
+                    break;
+                }
+            }
+
+
+            if(match){
+                System.out.print(i);
+                found =true;
+                break;
+            }
         }
 
-        if(!A.contains(str)){
+        if(!found){
             System.out.print("-1");
-        }else{
-           System.out.print(A.indexOf(str));
         }
-
-
-
 
     }
 }
