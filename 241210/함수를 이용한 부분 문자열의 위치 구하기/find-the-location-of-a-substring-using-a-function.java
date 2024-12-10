@@ -21,13 +21,7 @@ public class Main {
         if(!A.contains(str)){
             System.out.print("-1");
         }else{
-            for(int i=0; i<A.length(); i++){
-                if(A.charAt(i)==str.charAt(0) && A.charAt(i+1)==str.charAt(1)){
-                    int point = i+1;
-                    System.out.print(i);
-                    break;  //찾았으니 멈춰!
-                }
-            }
+           System.out.print(A.indexOf(str));
         }
 
 
