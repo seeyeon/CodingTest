@@ -25,18 +25,15 @@ public class Main {
             spy[i] = new Spy(codeName, score); 
         }
 
-        int max = spy[0].score;
+        int minIndex =0;
 
-        for(int i=1; i<5; i++){
-            if(spy[i].score < max){
-                max = i;
-                break;
-            }else{
-                max=0;
+        for(int i=0; i<5; i++){
+            if(spy[i].score < spy[minIndex].score){
+                minIndex = i;
             }
         }
 
-        System.out.print(spy[max].codeName+" "+spy[max].score);        
+        System.out.print(spy[minIndex].codeName+" "+spy[minIndex].score);        
     }
 }
 
