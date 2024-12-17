@@ -29,15 +29,17 @@ public class Main {
             person[i] = new Person(name, phone, address);
         }
 
-        Arrays.sort(person, Comparator.comparing(p->p.name));
+        int lastPerson =0;
+        for(int i=1; i<n; i++){
+            if(person[i].name.compareTo(person[lastPerson].name)>0){
+                lastPerson=i;
+            }
+        }
+        
 
-        //정렬 된 마지막 이름이 제일 느린 이름임
-        Person slowestPerson = person[n-1];
-
-
-        System.out.println("name " + slowestPerson.name);
-        System.out.println("addr " + slowestPerson.phone);
-        System.out.println("city " + slowestPerson.address);
+        System.out.println("name " + person[lastPerson].name);
+        System.out.println("addr " + person[lastPerson].phone);
+        System.out.println("city " + person[lastPerson].address);
 
 
     }
