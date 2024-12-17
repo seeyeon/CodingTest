@@ -19,7 +19,7 @@ class Student implements Comparable<Student>{
         if(this.w != student.w)
             return this.w-student.w;
         
-        return this.num - student.num;
+        return student.num -  this.num ;
     }
 }
 
