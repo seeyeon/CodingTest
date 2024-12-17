@@ -4,9 +4,10 @@ import java.util.Comparator;
 
 
 class Person{
-    String name, height, weight;
+    String name;
+    int height, weight;
 
-    Person(String name, String height, String weight){
+    Person(String name, int height, int weight){
         this.name = name;
         this.height = height;
         this.weight = weight;
@@ -24,13 +25,13 @@ public class Main {
 
         for(int i=0; i<n; i++){
             String name = sc.next();
-            String height = sc.next();
-            String weight = sc.next();
+            int height = sc.nextInt();
+            int weight = sc.nextInt();
 
             person[i] = new Person(name,height,weight);
         }
 
-        Arrays.sort(person, Comparator.comparing(p->p.height));
+        Arrays.sort(person, Comparator.comparing(p->Integer.valueOf(p.height)));
 
         for(int i=0; i<n; i++){
             System.out.println(person[i].name + " "+person[i].height+" "+person[i].weight);
