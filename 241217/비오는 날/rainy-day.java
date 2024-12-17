@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Comparator;
+import java.util.Arrays;
 
 class Climate{
 
@@ -35,22 +36,18 @@ public class Main {
             climate[i] = new Climate(date, day, Weather);
         }
 
-        int first =0;
+        //날짜를 기준으로 오름차순
+        Arrays.sort(climate, Comparator.comparing(p->p.date));
 
-        for(int i=1; i<n; i++){
-            if(climate[i].date.compareTo(climate[first].date)>0){
-                first = i;
-            }
-        }
-
-        int rain =0;
+        int rain=0;
 
         for(int i=0; i<n; i++){
             if(climate[i].Weather.equals("Rain")){
-                rain=i;
+                rain = i;
                 break;
             }
         }
+
 
         System.out.print(climate[rain].date+" "+climate[rain].day+" "+
         climate[rain].Weather);
