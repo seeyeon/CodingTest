@@ -15,6 +15,7 @@ public class Main {
 
         if(m1==m2 && d1==d2){
             System.out.print("1");
+            break;
         }
 
         for(int i=0; i<=m2; i++){
