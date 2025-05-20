@@ -13,6 +13,10 @@ public class Main {
 
         int first = 0, second =0;
 
+        if(m1==m2 && d1==d2){
+            System.out.print("1");
+        }
+
         for(int i=0; i<=m2; i++){
             second +=num_of_days[i];
         }
