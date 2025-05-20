@@ -22,15 +22,12 @@ public class Main {
             second +=num_of_days[i];
         }
 
-        second +=d2;
-
         for(int j=0; j<=m1; j++){
             first +=num_of_days[j];
         }
 
-        first +=d1;
-
         int result = second - first;
+        result = d2+d1-1;
         System.out.println(result);
     }
 }
