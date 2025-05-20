@@ -10,24 +10,22 @@ public class Main {
 
 
         int[] num_of_days = new int[]{0,31,28,31,30,31,30,31,31,30,31,30,31};
+        int month = m1, day = d1;
+        int Days =0;
 
-        int first = 0, second =0;
+        while(true){
+            if(month==m2 && day==d2)
+                break;
 
-        if(m1==m2 && d1==d2){
-            System.out.print("1");
-            return;
+            Days++;
+            day++;
+
+            if(day > num_of_days[month]){
+                month++;
+                day =1;
+            }
         }
 
-        for(int i=0; i<=m2; i++){
-            second +=num_of_days[i];
-        }
-
-        for(int j=0; j<=m1; j++){
-            first +=num_of_days[j];
-        }
-
-        int result = second - first;
-        result = d2+d1-1;
-        System.out.println(result);
+        System.out.print(Days+1);
     }
 }
