@@ -12,9 +12,9 @@ public class Main {
         int totalDays = 0;
 
         if(m1==m2){
-            totalDays = d2 - d1;
+            totalDays += d2 - d1;
         }else{
-            totalDays = days[m1] -d1;
+            totalDays += days[m1] -d1;
             for(int i=m1+1; i<m2; i++){
                 totalDays +=days[i];
             }
