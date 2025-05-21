@@ -31,6 +31,6 @@ public class Main {
         long cal = (1+totalDays) %7;
         String calWeek = week[cal];
 
-        System.out.println(calWeek);
+        System.out.println((int)calWeek);
     }
 }
