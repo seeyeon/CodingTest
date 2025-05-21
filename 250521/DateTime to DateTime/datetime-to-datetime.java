@@ -9,6 +9,7 @@ public class Main {
 
         if(A<11 || B<11 || C<11){
             System.out.print("-1");
+            return;
         }
 
         int day = (A-11)*24*60;
