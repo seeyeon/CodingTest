@@ -6,5 +6,21 @@ public class Main {
         int n = sc.nextInt();
         int b = sc.nextInt();
         // Please write your code here.
+        int[] digit = new int[20];
+        int cnt =0;
+
+        while(true){
+            if(n<b){
+                digit[cnt++] = n;
+                break;
+            }
+
+            digit[cnt++] = n%b;
+            n /=b;
+        }
+
+        for(int i=cnt-1; i>=0; i--){
+            System.out.print(digit[i]);
+        }
     }
 }
