@@ -9,32 +9,17 @@ public class Main {
         // Please write your code here.
         String[] week = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
         int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int totalDays = 0;
+        
+        int day1 = 0;
+        for(int i = 1; i < m1; i++) day1 += days[i];
+            day1 += d1;
 
-        if(m1==m2){
-            totalDays += d2 - d1;
-        }else if(m2<m1){
-            totalDays +=days[m2]-d2;
-            for(int i=m2+1; i<m1; i++){
-                totalDays +=days[i];
-            }
-            totalDays +=d1;
-            totalDays = -totalDays;
-        }else{
-            totalDays += days[m1] -d1;
-            for(int i=m1+1; i<m2; i++){
-                totalDays +=days[i];
-            }
-            totalDays += d2;
-        }
+        int day2 = 0;
+        for(int i = 1; i < m2; i++) day2 += days[i];
+        day2 += d2;
 
-        int cal = (1+totalDays) %7;
-        if(cal <0){
-            cal *=-1;
-        }
-
-        String calWeek = week[cal];
-
-        System.out.println(calWeek);
+        int diff = day2 - day1;
+        int cal = (1 + diff % 7 + 7) % 7; // 음수 보정 포함
+        System.out.println(week[cal]);
     }
 }
