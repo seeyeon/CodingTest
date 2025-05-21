@@ -11,7 +11,10 @@ public class Main {
         int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int totalDay = 0;
 
-        if(m1 ==m2 && d2 < d1){
+        if(m1==m2 && d2==d1){
+            System.out.print("Mon");
+            return;
+        }else if(m1 ==m2 && d2 < d1){
             totalDay +=(d2-d1)+1;
         }else{
             totalDay += days[m1] -d1;
