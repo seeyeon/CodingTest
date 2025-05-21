@@ -20,8 +20,16 @@ public class Main {
         for(int i = 1; i < m2; i++) day2 += days[i];
         day2 += d2;
 
+        int index=0;
+        for (int i = 0; i < week.length; i++) {
+        if (week[i].equals(A)) {
+            index = i;
+            break;
+        }
+}
+
         int diff = day2 - day1;
-        int count = (diff+1)/7;
-        System.out.println(count+1);
+        int count = (diff+index)/7;
+        System.out.println(count);
     }
 }
