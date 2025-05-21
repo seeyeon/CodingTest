@@ -31,7 +31,8 @@ public class Main {
         int count = 0;
         int totalDays = day2 - day1;
         for (int i = 0; i <= totalDays; i++) {
-        if ((index + i) % 7 == 0) count++;
+        int currentDayIndex = (1 + i) % 7;
+        if (currentDayIndex == index) count++;
         }
 
         System.out.print(count);
