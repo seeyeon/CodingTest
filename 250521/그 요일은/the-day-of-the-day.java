@@ -1,6 +1,21 @@
 import java.util.Scanner;
 
 public class Main {
+
+    public static int numOfDays(int m , int d){
+         int[] days = new int[]{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+         int totalDays = 0;
+
+         for(int i=1; i<m; i++){
+            totalDays +=days[i];
+         }
+
+         totalDays +=d;
+
+         return totalDays;
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m1 = sc.nextInt();
@@ -12,30 +27,24 @@ public class Main {
          String[] week = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
         int[] days = new int[]{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         
-        int day1 = 0;
-        for(int i = 1; i < m1; i++) day1 += days[i];
-            day1 += d1;
+        int startDate = numOfDays(m1, d1);
+        int endDate = numOfDays(m2, d2);
 
-        int day2 = 0;
-        for(int i = 1; i < m2; i++) day2 += days[i];
-        day2 += d2;
-
-        int index=0;
-        for (int i = 0; i < week.length; i++) {
-        if (week[i].equals(A)) {
-            index = i;
-            break;
+        int index =0;
+        for(int i=0; i<week.length; i++){
+            if(week[i].equals(A)){
+                index = i;
+                break;
+            }
         }
-}
-
+        
         int count = 0;
-        int totalDays = day2 - day1;
+        int totalDays = endDate - startDate;
         for (int i = 0; i <= totalDays; i++) {
-        int currentDayIndex = (1 + i) % 7;
-        if (currentDayIndex == index) count++;
+            int currentDayIndex = (1 + i) % 7; //1은 기준 요일(월요일) 
+            if (currentDayIndex == index) count++;
         }
 
         System.out.print(count);
-
     }
 }
