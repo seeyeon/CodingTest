@@ -18,7 +18,7 @@ public class Main {
             for(int i=m1+1; i<m2; i++){
                 totalDays +=days[i];
             }
-            totalDays = d2;
+            totalDays += d2;
         }
 
         int cal = (1+totalDays) %7;
