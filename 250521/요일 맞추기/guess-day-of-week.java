@@ -9,26 +9,21 @@ public class Main {
         // Please write your code here.
         String[] week = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
         int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int totalDay = 0;
+        int totalDays = 0;
 
-        if(m1==m2 && d2==d1){
-            System.out.print("Mon");
-            return;
-        }else if(m1 ==m2 && d2 < d1){
-            totalDay +=(d2-d1)+1;
+        if(m1==m2){
+            totalDays = d2 - d1;
         }else{
-            totalDay += days[m1] -d1;
-            totalDay += days[m2] -d2;
-
-            for(int i=m1+1; i<=m2-1; i++){
-                totalDay += days[i];
+            totalDays = days[m1] -d1;
+            for(int i=m1+1; i<m2; i++){
+                totalDays +=days[i];
             }
+            totalDays = d2;
         }
 
-        int cal = (totalDay % 7);
+        int cal = (1+totalDays) %7;
         String calWeek = week[cal];
 
-        System.out.print(calWeek); 
-
+        System.out.println(calWeek);
     }
 }
