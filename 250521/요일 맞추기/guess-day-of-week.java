@@ -19,7 +19,7 @@ public class Main {
                 totalDays +=days[i];
             }
             totalDays +=d1;
-            totalDays = -totalDays;
+            totalDays = -totalDays
         }else{
             totalDays += days[m1] -d1;
             for(int i=m1+1; i<m2; i++){
@@ -28,7 +28,7 @@ public class Main {
             totalDays += d2;
         }
 
-        int cal = (1+totalDays) %7;
+        long cal = (1+totalDays) %7;
         String calWeek = week[cal];
 
         System.out.println(calWeek);
