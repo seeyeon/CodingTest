@@ -13,6 +13,12 @@ public class Main {
 
         if(m1==m2){
             totalDays += d2 - d1;
+        }else if(m2<m1){
+            totalDays +=days[m2]-d2;
+            for(int i=m2+1; i<m1; i++){
+                totalDays +=days[i];
+            }
+            totalDays +=d1;
         }else{
             totalDays += days[m1] -d1;
             for(int i=m1+1; i<m2; i++){
