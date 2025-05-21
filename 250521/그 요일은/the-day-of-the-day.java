@@ -34,5 +34,7 @@ public class Main {
         if ((index + i) % 7 == 0) count++;
         }
 
+        System.out.print(count);
+
     }
 }
