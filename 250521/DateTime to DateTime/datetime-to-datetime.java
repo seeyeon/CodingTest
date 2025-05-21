@@ -7,7 +7,7 @@ public class Main {
         int C = sc.nextInt();
         // Please write your code here.
 
-        if(A<11 || B<11 || C<11){
+        if(A<11){
             System.out.print("-1");
             return;
         }
