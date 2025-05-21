@@ -28,8 +28,11 @@ public class Main {
         }
 }
 
-        int diff = day2 - day1;
-        int count = (diff+index)/7;
-        System.out.println(count);
+        int count = 0;
+        int totalDays = day2 - day1;
+        for (int i = 0; i <= totalDays; i++) {
+        if ((index + i) % 7 == 0) count++;
+        }
+
     }
 }
