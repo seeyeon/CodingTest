@@ -10,6 +10,12 @@ public class Main {
         if(A<11){
             System.out.print("-1");
             return;
+        }else if(A==11 && B<10){
+            System.out.print("-1");
+            return;
+        }else if(A==11 && B==11 && C<10){
+            System.out.print("-1");
+            return;
         }
 
         int day = (A-11)*24*60;
