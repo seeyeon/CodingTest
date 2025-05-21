@@ -28,9 +28,13 @@ public class Main {
             totalDays += d2;
         }
 
-        long cal = (1+totalDays) %7;
+        int cal = (1+totalDays) %7;
+        if(cal <0){
+            cal *=-1;
+        }
+
         String calWeek = week[cal];
 
-        System.out.println((int)calWeek);
+        System.out.println(calWeek);
     }
 }
