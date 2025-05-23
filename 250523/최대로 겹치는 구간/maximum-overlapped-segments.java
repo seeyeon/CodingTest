@@ -5,15 +5,23 @@ public class Main {
         int n = sc.nextInt();
         int[] x1 = new int[n];
         int[] x2 = new int[n];
+        int minX = Integer.MAX_VALUE;
+        int maxX = Integer.MIN_VALUE;
+
         for (int i = 0; i < n; i++) {
             x1[i] = sc.nextInt();
             x2[i] = sc.nextInt();
+
+            minX = Math.min(minX, Math.min(x1[i], x2[i]));
+            maxX = Math.max(maxX, Math.max(x1[i], x2[i]));
         }
         // Please write your code here.
-        int[] checked = new int[100];//100으로 두는게 맞나? 메모리 낭비?
+        int offset = minX <0 ? -minX : 0;
+
+        int[] checked = new int[maxX+offset+2]; 
         for(int i=0; i<n; i++){
             for(int j=x1[i]; j<=x2[i]-1; j++){
-                checked[j] +=1;
+                checked[j+offset] +=1;
             }
         }
 
